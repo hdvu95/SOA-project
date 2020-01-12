@@ -1,0 +1,1611 @@
+[
+    {
+        "id": "58a97772.a6139",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "d5535161.28b2",
+        "type": "ui_dropdown",
+        "z": "58a97772.a6139",
+        "name": "",
+        "label": "Choix du Batiment ",
+        "tooltip": "",
+        "place": "Choix",
+        "group": "8bf00a23.1ce7e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "options": [
+            {
+                "label": "GM",
+                "value": "GM_AE",
+                "type": "str"
+            },
+            {
+                "label": "GEI",
+                "value": "GEI_AE",
+                "type": "str"
+            },
+            {
+                "label": "GP",
+                "value": "GP_AE",
+                "type": "str"
+            },
+            {
+                "label": "GMM",
+                "value": "GMM_AE",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "batiment",
+        "x": 330,
+        "y": 540,
+        "wires": [
+            [
+                "f4d39b85.daef3"
+            ]
+        ]
+    },
+    {
+        "id": "befaf5b9.a466f8",
+        "type": "ui_dropdown",
+        "z": "58a97772.a6139",
+        "name": "",
+        "label": "Choix de la Salle",
+        "tooltip": "",
+        "place": "Choix",
+        "group": "8bf00a23.1ce7e",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "options": [
+            {
+                "label": "Salle 102",
+                "value": "102_CNT",
+                "type": "str"
+            },
+            {
+                "label": "Salle 103",
+                "value": "103_CNT",
+                "type": "str"
+            },
+            {
+                "label": "Salle 104",
+                "value": "104_CNT",
+                "type": "str"
+            },
+            {
+                "label": "Salle 105",
+                "value": "105_CNT",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "salle",
+        "x": 330,
+        "y": 500,
+        "wires": [
+            [
+                "f4d39b85.daef3"
+            ]
+        ]
+    },
+    {
+        "id": "b8d2bae3.caceb8",
+        "type": "ui_slider",
+        "z": "58a97772.a6139",
+        "name": "",
+        "label": "Température (°C)",
+        "tooltip": "",
+        "group": "8222fc79.e929",
+        "order": 4,
+        "width": 6,
+        "height": 1,
+        "passthru": false,
+        "outs": "all",
+        "topic": "temperature",
+        "min": "15",
+        "max": "30",
+        "step": 1,
+        "x": 90,
+        "y": 260,
+        "wires": [
+            [
+                "cd9cce0d.84ad98"
+            ]
+        ]
+    },
+    {
+        "id": "cd9cce0d.84ad98",
+        "type": "ui_numeric",
+        "z": "58a97772.a6139",
+        "name": "",
+        "label": "",
+        "tooltip": "",
+        "group": "8222fc79.e929",
+        "order": 6,
+        "width": 6,
+        "height": 1,
+        "wrap": false,
+        "passthru": true,
+        "topic": "temperature",
+        "format": "{{value}}",
+        "min": "15",
+        "max": "30",
+        "step": 1,
+        "x": 340,
+        "y": 260,
+        "wires": [
+            [
+                "f4d39b85.daef3"
+            ]
+        ]
+    },
+    {
+        "id": "c95f20c5.a7b098",
+        "type": "ui_switch",
+        "z": "58a97772.a6139",
+        "name": "",
+        "label": "Alarme",
+        "tooltip": "",
+        "group": "8222fc79.e929",
+        "order": 3,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "alarme",
+        "style": "",
+        "onvalue": "http://192.168.43.183:8081/features/turnOn",
+        "onvalueType": "str",
+        "onicon": "check_box",
+        "oncolor": "green",
+        "offvalue": "http://192.168.43.183:8081/features/turnOff",
+        "offvalueType": "str",
+        "officon": "check_box_outline_blank",
+        "offcolor": "grey",
+        "x": 340,
+        "y": 180,
+        "wires": [
+            [
+                "f4d39b85.daef3"
+            ]
+        ]
+    },
+    {
+        "id": "495aa05.47f8fe",
+        "type": "ui_switch",
+        "z": "58a97772.a6139",
+        "name": "",
+        "label": "Lumière",
+        "tooltip": "",
+        "group": "8222fc79.e929",
+        "order": 1,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "lumiere",
+        "style": "",
+        "onvalue": "http://192.168.43.183:8085/features/turnOn",
+        "onvalueType": "str",
+        "onicon": "check_box",
+        "oncolor": "green",
+        "offvalue": "http://192.168.43.183:8085/features/turnOff",
+        "offvalueType": "str",
+        "officon": "check_box_outline_blank",
+        "offcolor": "grey",
+        "x": 340,
+        "y": 120,
+        "wires": [
+            [
+                "f4d39b85.daef3"
+            ]
+        ]
+    },
+    {
+        "id": "d0cb023f.38e488",
+        "type": "ui_switch",
+        "z": "58a97772.a6139",
+        "name": "",
+        "label": "Radiateur",
+        "tooltip": "",
+        "group": "8222fc79.e929",
+        "order": 2,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "radiateur",
+        "style": "",
+        "onvalue": "http://192.168.43.183:8084/features/turnOn",
+        "onvalueType": "str",
+        "onicon": "check_box",
+        "oncolor": "green",
+        "offvalue": "http://192.168.43.183:8084/features/turnOff",
+        "offvalueType": "str",
+        "officon": "check_box_outline_blank",
+        "offcolor": "grey",
+        "x": 340,
+        "y": 220,
+        "wires": [
+            [
+                "f4d39b85.daef3"
+            ]
+        ]
+    },
+    {
+        "id": "f4d39b85.daef3",
+        "type": "function",
+        "z": "58a97772.a6139",
+        "name": "context.data switch case",
+        "func": "context.data = context.data || {\n    salle : \"\",\n    batiment: \"\",\n    temperature: \"\",\n    radiateur: \"\",\n    alarme: \"\",\n    lumiere: \"\",\n    porte: \"\",\n    fenetre: \"\",\n};\n\nswitch(msg.topic) {\n    case \"salle\":\n        context.data.salle = msg.payload;\n        break;\n    case \"batiment\":\n        context.data.batiment = msg.payload;\n        break;\n    \n    case \"temperature\":\n        context.data.temperature = msg.payload;\n        break;\n    case \"radiateur\":\n        context.data.radiateur = msg.payload;\n        break;\n    case \"alarme\":\n        context.data.alarme = msg.payload;\n        break;\n    case \"lumiere\":\n        context.data.lumiere = msg.payload;\n        break;\n    case \"porte\":\n        context.data.porte = msg.payload;\n        break;\n    case \"fenetre\":\n        context.data.fenetre = msg.payload;\n        break;\n}\n\n\n\nif (msg.topic == \"timer\" && msg.payload == \"timer\") {\n    return [context.data,null];\n}\nif (msg.topic == \"timer2\" && msg.payload == \"timer2\") {\n    return [null,context.data];\n}",
+        "outputs": 2,
+        "noerr": 0,
+        "x": 650,
+        "y": 460,
+        "wires": [
+            [
+                "b5ef8311.d123b8",
+                "a8d3c945.eb5fd8",
+                "ee35ce56.81451",
+                "c4a8a0c7.3ebdf",
+                "8886d4f0.2fd67",
+                "a1d1a5bd.213c08"
+            ],
+            [
+                "2e628fd1.e1b918",
+                "9f819f34.5a6f38",
+                "ef5c21bb.77ea4",
+                "882e1960.3b5748",
+                "87d32018.6822c8",
+                "6e7e6b57.44277c",
+                "fb722b85.795088"
+            ]
+        ]
+    },
+    {
+        "id": "2d149db4.0233aa",
+        "type": "ui_button",
+        "z": "58a97772.a6139",
+        "name": "",
+        "group": "8222fc79.e929",
+        "order": 8,
+        "width": 6,
+        "height": 1,
+        "passthru": false,
+        "label": "Appliquer",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "done",
+        "payload": "timer",
+        "payloadType": "str",
+        "topic": "timer",
+        "x": 300,
+        "y": 600,
+        "wires": [
+            [
+                "f4d39b85.daef3"
+            ]
+        ]
+    },
+    {
+        "id": "eae52a36.41c0e8",
+        "type": "inject",
+        "z": "58a97772.a6139",
+        "name": "",
+        "topic": "",
+        "payload": "15",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 90,
+        "y": 360,
+        "wires": [
+            [
+                "d0cb023f.38e488",
+                "c95f20c5.a7b098",
+                "495aa05.47f8fe",
+                "befaf5b9.a466f8",
+                "d5535161.28b2",
+                "b8d2bae3.caceb8",
+                "8f9f3e01.009198",
+                "45778b6f.9f86e4"
+            ]
+        ]
+    },
+    {
+        "id": "21d1233e.44f1ac",
+        "type": "comment",
+        "z": "58a97772.a6139",
+        "name": "GESTION DES SALLES INSA",
+        "info": "",
+        "x": 280,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "d049ff13.150d",
+        "type": "comment",
+        "z": "58a97772.a6139",
+        "name": "JOURNAL D EVENEMENT",
+        "info": "",
+        "x": 230,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "bc1430.f5873bd",
+        "type": "debug",
+        "z": "58a97772.a6139",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 1030,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "32146a5a.4cf0be",
+        "type": "http request",
+        "z": "58a97772.a6139",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": false,
+        "url": "{{{payload}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 850,
+        "y": 240,
+        "wires": [
+            [
+                "bc1430.f5873bd"
+            ]
+        ]
+    },
+    {
+        "id": "b5ef8311.d123b8",
+        "type": "function",
+        "z": "58a97772.a6139",
+        "name": "Radiateur",
+        "func": "msg.payload = msg.radiateur + \"/\" + msg.batiment + \"/\" + msg.salle +\"/\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 680,
+        "y": 240,
+        "wires": [
+            [
+                "32146a5a.4cf0be"
+            ]
+        ]
+    },
+    {
+        "id": "ee35ce56.81451",
+        "type": "function",
+        "z": "58a97772.a6139",
+        "name": "Alarme",
+        "func": "msg.payload = msg.alarme + \"/\" + msg.batiment + \"/\" + msg.salle +\"/\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 680,
+        "y": 280,
+        "wires": [
+            [
+                "9fd52c43.2a7ca8"
+            ]
+        ]
+    },
+    {
+        "id": "a8d3c945.eb5fd8",
+        "type": "function",
+        "z": "58a97772.a6139",
+        "name": "Lumiere",
+        "func": "msg.payload = msg.lumiere + \"/\" + msg.batiment + \"/\" + msg.salle +\"/\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 680,
+        "y": 320,
+        "wires": [
+            [
+                "248bf22.5e9d88e"
+            ]
+        ]
+    },
+    {
+        "id": "e288ebf3.db6a88",
+        "type": "debug",
+        "z": "58a97772.a6139",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 1010,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "9fd52c43.2a7ca8",
+        "type": "http request",
+        "z": "58a97772.a6139",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": false,
+        "url": "{{{payload}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 830,
+        "y": 280,
+        "wires": [
+            [
+                "e288ebf3.db6a88"
+            ]
+        ]
+    },
+    {
+        "id": "c12d375a.f54f6",
+        "type": "debug",
+        "z": "58a97772.a6139",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 1030,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "248bf22.5e9d88e",
+        "type": "http request",
+        "z": "58a97772.a6139",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": false,
+        "url": "{{{payload}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 850,
+        "y": 320,
+        "wires": [
+            [
+                "c12d375a.f54f6"
+            ]
+        ]
+    },
+    {
+        "id": "be4d06c7.4f716",
+        "type": "ui_button",
+        "z": "58a97772.a6139",
+        "name": "",
+        "group": "8bf00a23.1ce7e",
+        "order": 4,
+        "width": 6,
+        "height": 1,
+        "passthru": false,
+        "label": "Rafraîchir",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "refresh",
+        "payload": "timer2",
+        "payloadType": "str",
+        "topic": "timer2",
+        "x": 300,
+        "y": 640,
+        "wires": [
+            [
+                "f4d39b85.daef3"
+            ]
+        ]
+    },
+    {
+        "id": "b829fc3a.38581",
+        "type": "http request",
+        "z": "58a97772.a6139",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": false,
+        "url": "http://192.168.43.183:8081/features/archive",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 1650,
+        "y": 340,
+        "wires": [
+            [
+                "b55a1a9f.853c08"
+            ]
+        ]
+    },
+    {
+        "id": "c8fdd9f4.7bd5e8",
+        "type": "ui_button",
+        "z": "58a97772.a6139",
+        "name": "",
+        "group": "7fcd0e73.952828",
+        "order": 3,
+        "width": 6,
+        "height": 1,
+        "passthru": false,
+        "label": "Recuperer Historique",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "get_app",
+        "payload": "Fichier archive.txt enregistré sous C:\\Users\\Public\\Documents",
+        "payloadType": "str",
+        "topic": "",
+        "x": 1590,
+        "y": 200,
+        "wires": [
+            [
+                "b829fc3a.38581",
+                "aaf8ca02.3a384",
+                "63712f6d.8e4f7"
+            ]
+        ]
+    },
+    {
+        "id": "e55ea446.c2e02",
+        "type": "comment",
+        "z": "58a97772.a6139",
+        "name": "Historique",
+        "info": "",
+        "x": 1640,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "45778b6f.9f86e4",
+        "type": "ui_switch",
+        "z": "58a97772.a6139",
+        "name": "",
+        "label": "Porte",
+        "tooltip": "",
+        "group": "8222fc79.e929",
+        "order": 5,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "porte",
+        "style": "",
+        "onvalue": "http://192.168.43.183:8083/features/turnOn",
+        "onvalueType": "str",
+        "onicon": "check_box",
+        "oncolor": "green",
+        "offvalue": "http://192.168.43.183:8083/features/turnOff",
+        "offvalueType": "str",
+        "officon": "check_box_outline_blank",
+        "offcolor": "grey",
+        "x": 330,
+        "y": 300,
+        "wires": [
+            [
+                "f4d39b85.daef3"
+            ]
+        ]
+    },
+    {
+        "id": "8f9f3e01.009198",
+        "type": "ui_switch",
+        "z": "58a97772.a6139",
+        "name": "",
+        "label": "Fenetre",
+        "tooltip": "",
+        "group": "8222fc79.e929",
+        "order": 7,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "fenetre",
+        "style": "",
+        "onvalue": "http://192.168.43.183:8086/features/turnOn",
+        "onvalueType": "str",
+        "onicon": "check_box",
+        "oncolor": "green",
+        "offvalue": "http://192.168.43.183:8086/features/turnOff",
+        "offvalueType": "str",
+        "officon": "check_box_outline_blank",
+        "offcolor": "grey",
+        "x": 340,
+        "y": 340,
+        "wires": [
+            [
+                "f4d39b85.daef3"
+            ]
+        ]
+    },
+    {
+        "id": "d95cda2e.e30358",
+        "type": "debug",
+        "z": "58a97772.a6139",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 1030,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "79f2224f.d5967c",
+        "type": "http request",
+        "z": "58a97772.a6139",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": false,
+        "url": "{{{payload}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 850,
+        "y": 160,
+        "wires": [
+            [
+                "d95cda2e.e30358"
+            ]
+        ]
+    },
+    {
+        "id": "8886d4f0.2fd67",
+        "type": "function",
+        "z": "58a97772.a6139",
+        "name": "Porte",
+        "func": "msg.payload = msg.porte + \"/\" + msg.batiment + \"/\" + msg.salle +\"/\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 670,
+        "y": 160,
+        "wires": [
+            [
+                "79f2224f.d5967c"
+            ]
+        ]
+    },
+    {
+        "id": "c4a8a0c7.3ebdf",
+        "type": "function",
+        "z": "58a97772.a6139",
+        "name": "Fenetre",
+        "func": "msg.payload = msg.fenetre + \"/\" + msg.batiment + \"/\" + msg.salle +\"/\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 680,
+        "y": 200,
+        "wires": [
+            [
+                "6061c5f5.59ce0c"
+            ]
+        ]
+    },
+    {
+        "id": "b4812f61.df7be",
+        "type": "debug",
+        "z": "58a97772.a6139",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 1010,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "6061c5f5.59ce0c",
+        "type": "http request",
+        "z": "58a97772.a6139",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": false,
+        "url": "{{{payload}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 830,
+        "y": 200,
+        "wires": [
+            [
+                "b4812f61.df7be"
+            ]
+        ]
+    },
+    {
+        "id": "d84464c3.1ff788",
+        "type": "debug",
+        "z": "58a97772.a6139",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 1030,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "deeae8d5.380df",
+        "type": "http request",
+        "z": "58a97772.a6139",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": false,
+        "url": "{{{payload}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 850,
+        "y": 120,
+        "wires": [
+            [
+                "d84464c3.1ff788"
+            ]
+        ]
+    },
+    {
+        "id": "a1d1a5bd.213c08",
+        "type": "function",
+        "z": "58a97772.a6139",
+        "name": "Température",
+        "func": "msg.payload = \"http://192.168.43.183:8084/features/\" + msg.temperature + \"/\" + msg.batiment + \"/\" + msg.salle +\"/\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 690,
+        "y": 120,
+        "wires": [
+            [
+                "deeae8d5.380df"
+            ]
+        ]
+    },
+    {
+        "id": "b55a1a9f.853c08",
+        "type": "file",
+        "z": "58a97772.a6139",
+        "name": "",
+        "filename": "C:\\Users\\Public\\Documents\\archive.txt",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1890,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b1eabc49.796fb",
+        "type": "ui_text",
+        "z": "58a97772.a6139",
+        "group": "7fcd0e73.952828",
+        "order": 5,
+        "width": 6,
+        "height": 1,
+        "name": "telechargement effectué",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 2050,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "aaf8ca02.3a384",
+        "type": "delay",
+        "z": "58a97772.a6139",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 1840,
+        "y": 200,
+        "wires": [
+            [
+                "b1eabc49.796fb"
+            ]
+        ]
+    },
+    {
+        "id": "63712f6d.8e4f7",
+        "type": "delay",
+        "z": "58a97772.a6139",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "20",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 1780,
+        "y": 260,
+        "wires": [
+            [
+                "35e9500b.3d3658"
+            ]
+        ]
+    },
+    {
+        "id": "35e9500b.3d3658",
+        "type": "function",
+        "z": "58a97772.a6139",
+        "name": "",
+        "func": "msg.payload = \"\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1910,
+        "y": 260,
+        "wires": [
+            [
+                "b1eabc49.796fb"
+            ]
+        ]
+    },
+    {
+        "id": "fa7834fa.25557",
+        "type": "http request",
+        "z": "58a97772.a6139",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": false,
+        "url": "http://192.168.43.183:8081/features/archive",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 1750,
+        "y": 420,
+        "wires": [
+            [
+                "9bc4a7ec.36499"
+            ]
+        ]
+    },
+    {
+        "id": "9bc4a7ec.36499",
+        "type": "ui_text",
+        "z": "58a97772.a6139",
+        "group": "7fcd0e73.952828",
+        "order": 7,
+        "width": 24,
+        "height": 1,
+        "name": "",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "x": 1910,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "cc126df2.ddef18",
+        "type": "ui_button",
+        "z": "58a97772.a6139",
+        "name": "",
+        "group": "7fcd0e73.952828",
+        "order": 2,
+        "width": 6,
+        "height": 1,
+        "passthru": false,
+        "label": "Rafraîchir",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "refresh",
+        "payload": "timer2",
+        "payloadType": "str",
+        "topic": "timer2",
+        "x": 1560,
+        "y": 420,
+        "wires": [
+            [
+                "fa7834fa.25557",
+                "82b18b76.1a8b48"
+            ]
+        ]
+    },
+    {
+        "id": "af36cfd9.54364",
+        "type": "ui_switch",
+        "z": "58a97772.a6139",
+        "name": "",
+        "label": "Lumiere",
+        "tooltip": "",
+        "group": "8581fa7f.01592",
+        "order": 1,
+        "width": 6,
+        "height": 1,
+        "passthru": false,
+        "decouple": "true",
+        "topic": "",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "wb_incandescent",
+        "oncolor": "green",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "wb_incandescent",
+        "offcolor": "grey",
+        "x": 1000,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b9ac7247.80046",
+        "type": "function",
+        "z": "58a97772.a6139",
+        "name": "on/off",
+        "func": "switch(msg.payload){\n    case \"0\":\n        msg.payload = false;\n        break;\n    case \"1\":\n        msg.payload = true;\n        break;\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 850,
+        "y": 740,
+        "wires": [
+            [
+                "af36cfd9.54364"
+            ]
+        ]
+    },
+    {
+        "id": "309089eb.31cb46",
+        "type": "http request",
+        "z": "58a97772.a6139",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": false,
+        "url": "http://192.168.43.183:8081/features/getStatus/{{{payload}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 670,
+        "y": 780,
+        "wires": [
+            [
+                "d1ba97a4.f8f26"
+            ]
+        ]
+    },
+    {
+        "id": "9f819f34.5a6f38",
+        "type": "function",
+        "z": "58a97772.a6139",
+        "name": "BAT + SALLE",
+        "func": "msg.payload = msg.batiment + \"/\" + msg.salle +\"/\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 480,
+        "y": 780,
+        "wires": [
+            [
+                "309089eb.31cb46"
+            ]
+        ]
+    },
+    {
+        "id": "77e31482.4d4e44",
+        "type": "http request",
+        "z": "58a97772.a6139",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": false,
+        "url": "http://192.168.43.183:8085/features/getStatus/{{{payload}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 670,
+        "y": 740,
+        "wires": [
+            [
+                "b9ac7247.80046"
+            ]
+        ]
+    },
+    {
+        "id": "2e628fd1.e1b918",
+        "type": "function",
+        "z": "58a97772.a6139",
+        "name": "BAT + SALLE",
+        "func": "msg.payload = msg.batiment + \"/\" + msg.salle +\"/\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 480,
+        "y": 740,
+        "wires": [
+            [
+                "77e31482.4d4e44"
+            ]
+        ]
+    },
+    {
+        "id": "f32a458a.0a2ad8",
+        "type": "http request",
+        "z": "58a97772.a6139",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": false,
+        "url": "http://192.168.43.183:8084/features/getStatus/{{{payload}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 670,
+        "y": 820,
+        "wires": [
+            [
+                "419c56d4.154b2"
+            ]
+        ]
+    },
+    {
+        "id": "ef5c21bb.77ea4",
+        "type": "function",
+        "z": "58a97772.a6139",
+        "name": "BAT + SALLE",
+        "func": "msg.payload = msg.batiment + \"/\" + msg.salle +\"/\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 480,
+        "y": 820,
+        "wires": [
+            [
+                "f32a458a.0a2ad8"
+            ]
+        ]
+    },
+    {
+        "id": "3b31f21c.35f81e",
+        "type": "http request",
+        "z": "58a97772.a6139",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": false,
+        "url": "http://192.168.43.183:8086/features/getStatus/{{{payload}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 670,
+        "y": 940,
+        "wires": [
+            [
+                "8a320d69.c4b98"
+            ]
+        ]
+    },
+    {
+        "id": "1d83e2fb.62227d",
+        "type": "http request",
+        "z": "58a97772.a6139",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": false,
+        "url": "http://192.168.43.183:8083/features/getStatus/{{{payload}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 670,
+        "y": 900,
+        "wires": [
+            [
+                "7541b7b1.cf93c8"
+            ]
+        ]
+    },
+    {
+        "id": "201cb1cd.337ade",
+        "type": "http request",
+        "z": "58a97772.a6139",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": false,
+        "url": "http://192.168.43.183:8082/features/getStatus/{{{payload}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 670,
+        "y": 980,
+        "wires": [
+            [
+                "f1193d47.415ae"
+            ]
+        ]
+    },
+    {
+        "id": "87d32018.6822c8",
+        "type": "function",
+        "z": "58a97772.a6139",
+        "name": "BAT + SALLE",
+        "func": "msg.payload = msg.batiment + \"/\" + msg.salle +\"/\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 480,
+        "y": 900,
+        "wires": [
+            [
+                "1d83e2fb.62227d"
+            ]
+        ]
+    },
+    {
+        "id": "6e7e6b57.44277c",
+        "type": "function",
+        "z": "58a97772.a6139",
+        "name": "BAT + SALLE",
+        "func": "msg.payload = msg.batiment + \"/\" + msg.salle +\"/\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 480,
+        "y": 940,
+        "wires": [
+            [
+                "3b31f21c.35f81e"
+            ]
+        ]
+    },
+    {
+        "id": "fb722b85.795088",
+        "type": "function",
+        "z": "58a97772.a6139",
+        "name": "BAT + SALLE",
+        "func": "msg.payload = msg.batiment + \"/\" + msg.salle +\"/\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 480,
+        "y": 980,
+        "wires": [
+            [
+                "201cb1cd.337ade"
+            ]
+        ]
+    },
+    {
+        "id": "d9dea3b1.2937f8",
+        "type": "http request",
+        "z": "58a97772.a6139",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": false,
+        "url": "http://192.168.43.183:8084/features/getStatus/{{{payload}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 670,
+        "y": 860,
+        "wires": [
+            [
+                "7cc82db8.111f24"
+            ]
+        ]
+    },
+    {
+        "id": "882e1960.3b5748",
+        "type": "function",
+        "z": "58a97772.a6139",
+        "name": "BAT + SALLE",
+        "func": "msg.payload = msg.batiment + \"/\" + msg.salle +\"/\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 480,
+        "y": 860,
+        "wires": [
+            [
+                "d9dea3b1.2937f8"
+            ]
+        ]
+    },
+    {
+        "id": "48472db5.ef62bc",
+        "type": "ui_switch",
+        "z": "58a97772.a6139",
+        "name": "",
+        "label": "Alarme",
+        "tooltip": "",
+        "group": "8581fa7f.01592",
+        "order": 2,
+        "width": 6,
+        "height": 1,
+        "passthru": false,
+        "decouple": "true",
+        "topic": "",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "access_alarm",
+        "oncolor": "green",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "access_alarm",
+        "offcolor": "grey",
+        "x": 1000,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d1ba97a4.f8f26",
+        "type": "function",
+        "z": "58a97772.a6139",
+        "name": "on/off",
+        "func": "switch(msg.payload){\n    case \"0\":\n        msg.payload = false;\n        break;\n    case \"1\":\n        msg.payload = true;\n        break;\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 850,
+        "y": 780,
+        "wires": [
+            [
+                "48472db5.ef62bc"
+            ]
+        ]
+    },
+    {
+        "id": "26f20507.9eb52a",
+        "type": "ui_switch",
+        "z": "58a97772.a6139",
+        "name": "",
+        "label": "Radiateur",
+        "tooltip": "",
+        "group": "8581fa7f.01592",
+        "order": 3,
+        "width": 6,
+        "height": 1,
+        "passthru": false,
+        "decouple": "true",
+        "topic": "",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "check_box",
+        "oncolor": "green",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "check_box_outline_blank",
+        "offcolor": "grey",
+        "x": 1000,
+        "y": 820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "419c56d4.154b2",
+        "type": "function",
+        "z": "58a97772.a6139",
+        "name": "on/off",
+        "func": "switch(msg.payload){\n    case \"0\":\n        msg.payload = false;\n        break;\n    case \"1\":\n        msg.payload = true;\n        break;\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 850,
+        "y": 820,
+        "wires": [
+            [
+                "26f20507.9eb52a"
+            ]
+        ]
+    },
+    {
+        "id": "bb2595dc.7be46",
+        "type": "ui_switch",
+        "z": "58a97772.a6139",
+        "name": "",
+        "label": "Presence",
+        "tooltip": "",
+        "group": "8581fa7f.01592",
+        "order": 7,
+        "width": 6,
+        "height": 1,
+        "passthru": false,
+        "decouple": "true",
+        "topic": "",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "directions_walk",
+        "oncolor": "green",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "directions_walk",
+        "offcolor": "grey",
+        "x": 1000,
+        "y": 980,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f1193d47.415ae",
+        "type": "function",
+        "z": "58a97772.a6139",
+        "name": "on/off",
+        "func": "switch(msg.payload){\n    case \"false\":\n        msg.payload = false;\n        break;\n    case \"true\":\n        msg.payload = true;\n        break;\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 850,
+        "y": 980,
+        "wires": [
+            [
+                "bb2595dc.7be46"
+            ]
+        ]
+    },
+    {
+        "id": "4751d133.7b6728",
+        "type": "ui_text",
+        "z": "58a97772.a6139",
+        "group": "8581fa7f.01592",
+        "order": 4,
+        "width": 6,
+        "height": 1,
+        "name": "",
+        "label": "Température Salle",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 1030,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "2e282fdc.156098",
+        "type": "ui_text",
+        "z": "58a97772.a6139",
+        "group": "8581fa7f.01592",
+        "order": 6,
+        "width": 6,
+        "height": 1,
+        "name": "",
+        "label": "Fenetre",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 1000,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "8a320d69.c4b98",
+        "type": "function",
+        "z": "58a97772.a6139",
+        "name": "open",
+        "func": "switch(msg.payload){\n    case \"0\":\n        msg.payload = \"Fermée\";\n        break;\n    case \"1\":\n        msg.payload = \"Ouverte\";\n        break;\n    default:\n        msg.payload = \"ERROR\";\n        break;\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 850,
+        "y": 940,
+        "wires": [
+            [
+                "2e282fdc.156098"
+            ]
+        ]
+    },
+    {
+        "id": "920b7d6a.f305c",
+        "type": "ui_text",
+        "z": "58a97772.a6139",
+        "group": "8581fa7f.01592",
+        "order": 5,
+        "width": 6,
+        "height": 1,
+        "name": "",
+        "label": "Porte",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 990,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "7541b7b1.cf93c8",
+        "type": "function",
+        "z": "58a97772.a6139",
+        "name": "open",
+        "func": "switch(msg.payload){\n    case \"0\":\n        msg.payload = \"Fermée\";\n        break;\n    case \"1\":\n        msg.payload = \"Ouverte\";\n        break;\n    default:\n        msg.payload = \"ERROR\";\n        break;\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 850,
+        "y": 900,
+        "wires": [
+            [
+                "920b7d6a.f305c"
+            ]
+        ]
+    },
+    {
+        "id": "7cc82db8.111f24",
+        "type": "function",
+        "z": "58a97772.a6139",
+        "name": "open",
+        "func": "switch(msg.payload){\n    case \"0\":\n        msg.payload = \"Eteint\";\n        break;\n    default:\n        return msg;\n\n}\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 850,
+        "y": 860,
+        "wires": [
+            [
+                "4751d133.7b6728"
+            ]
+        ]
+    },
+    {
+        "id": "82b18b76.1a8b48",
+        "type": "delay",
+        "z": "58a97772.a6139",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "20",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 1700,
+        "y": 500,
+        "wires": [
+            [
+                "fa21b6e4.196a28"
+            ]
+        ]
+    },
+    {
+        "id": "fa21b6e4.196a28",
+        "type": "function",
+        "z": "58a97772.a6139",
+        "name": "",
+        "func": "msg.payload = \"\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1830,
+        "y": 500,
+        "wires": [
+            [
+                "9bc4a7ec.36499"
+            ]
+        ]
+    },
+    {
+        "id": "8e88f239.46584",
+        "type": "ui_text",
+        "z": "58a97772.a6139",
+        "group": "7fcd0e73.952828",
+        "order": 6,
+        "width": 24,
+        "height": 3,
+        "name": "",
+        "label": "",
+        "format": "",
+        "layout": "row-spread",
+        "x": 1860,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "8bf00a23.1ce7e",
+        "type": "ui_group",
+        "z": "",
+        "name": "Choix Salle Batiment",
+        "tab": "bd492a71.0d839",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false
+    },
+    {
+        "id": "8222fc79.e929",
+        "type": "ui_group",
+        "z": "",
+        "name": "Gestion salles INSA",
+        "tab": "bd492a71.0d839",
+        "order": 2,
+        "disp": true,
+        "width": "12",
+        "collapse": false
+    },
+    {
+        "id": "7fcd0e73.952828",
+        "type": "ui_group",
+        "z": "",
+        "name": "Group 1",
+        "tab": "3a23f727.5dd1b",
+        "order": 1,
+        "disp": false,
+        "width": 24,
+        "collapse": false
+    },
+    {
+        "id": "8581fa7f.01592",
+        "type": "ui_group",
+        "z": "",
+        "name": "Journal d'événement",
+        "tab": "bd492a71.0d839",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "bd492a71.0d839",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Ecran principal",
+        "icon": "home",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "3a23f727.5dd1b",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Historique",
+        "icon": "list",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    }
+]
